@@ -3,418 +3,465 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>基金日报 · 2026年5月30日星期六 15:27</title>
+<title>基金日报 · 2026年5月30日星期六 16:09</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#0a0e17;color:#e2e8f0;line-height:1.6;-webkit-font-smoothing:antialiased}
-.wrap{max-width:680px;margin:0 auto;padding:0 12px}
-.header{background:linear-gradient(135deg,#0f172a,#1e1b4b,#0f172a);border-bottom:1px solid #1e293b;padding:20px 0}
-.hdr-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.brand{font-size:12px;color:#64748b;letter-spacing:2px}
-.time{font-size:12px;color:#475569}
-.sum-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.sum-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:14px}
-.sum-label{font-size:11px;color:#475569;margin-bottom:2px}
-.sum-val{font-size:20px;font-weight:700;font-variant-numeric:tabular-nums}
-.pos{color:#ef4444}.neg{color:#10b981}
-.main{padding:16px 0 32px}
-.sec-title{font-size:13px;font-weight:500;color:#64748b;padding:10px 0 6px;border-bottom:1px solid #1e293b;margin:16px 0 8px;display:flex;justify-content:space-between;align-items:center}
-.badge{font-size:11px;padding:2px 8px;border-radius:4px;font-weight:500}
-.badge.pos{background:rgba(239,68,68,0.1);color:#ef4444}
-.badge.neg{background:rgba(16,185,129,0.1);color:#10b981}
-.fund-card{background:#111827;border:1px solid #1e293b;border-radius:8px;padding:12px 14px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center}
-.fc-name{font-size:13px;font-weight:500}
-.fc-meta{font-size:11px;color:#475569;margin-top:2px}
-.fc-pct{font-size:16px;font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
-.fc-profit{font-size:11px;color:#475569;text-align:right;margin-top:1px}
-.dim{color:#475569}
-.signal-card{background:#111827;border:1px solid #1e293b;border-radius:8px;padding:12px 14px;margin-bottom:6px}
-.sig-name{font-size:13px;font-weight:500;margin-bottom:6px}
-.sig-row{display:flex;align-items:center;gap:6px;margin-bottom:3px;font-size:12px}
-.tag{display:inline-block;padding:1px 6px;border-radius:3px;font-size:10px;font-weight:500;min-width:32px;text-align:center}
-.tag-red{background:rgba(239,68,68,0.1);color:#ef4444}
-.tag-green{background:rgba(16,185,129,0.1);color:#10b981}
-.tag-blue{background:rgba(59,130,246,0.1);color:#3b82f6}
-.tag-gold{background:rgba(245,158,11,0.1);color:#f59e0b}
-.dingtou-status{font-size:12px;color:#475569;margin-bottom:8px}
-.dingtou-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.dingtou-item{background:#111827;border:1px solid #1e293b;border-radius:8px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;font-size:12px}
-.dingtou-check{font-size:16px}
-.alert-card{background:#111827;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:12px 14px;margin-bottom:8px;font-size:12px;color:#94a3b8;line-height:1.8}
-.advice-card{background:linear-gradient(135deg,rgba(59,130,246,0.05),rgba(139,92,246,0.05));border:1px solid rgba(59,130,246,0.15);border-radius:8px;padding:14px;margin-bottom:8px;font-size:12px;line-height:1.8;color:#cbd5e1}
-.footer{text-align:center;padding:16px 0 32px;font-size:11px;color:#334155;border-top:1px solid #1e293b}
-@media(max-width:480px){.sum-grid{grid-template-columns:1fr}.dingtou-grid{grid-template-columns:1fr}.sum-val{font-size:18px}}
+:root{
+  --bg:#06080f;--surface:#0c1018;--card:#111620;
+  --border:rgba(255,255,255,0.05);--border-h:rgba(255,255,255,0.08);
+  --text:#e2e8f0;--text2:#94a3b8;--text3:#475569;
+  --red:#ef4444;--red-bg:rgba(239,68,68,0.08);
+  --green:#10b981;--green-bg:rgba(16,185,129,0.08);
+  --blue:#3b82f6;--blue-bg:rgba(59,130,246,0.08);
+  --gold:#f59e0b;--gold-bg:rgba(245,158,11,0.08);
+  --purple:#8b5cf6;--purple-bg:rgba(139,92,246,0.08);
+}
+body{font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}
+.mono{font-family:'DM Mono',monospace}
+.header{position:relative;overflow:hidden;background:linear-gradient(160deg,#0a0f1a 0%,#0f1628 40%,#131832 70%,#0a0f1a 100%);border-bottom:1px solid var(--border);padding:28px 0 24px}
+.header::before{content:'';position:absolute;top:-60%;right:-20%;width:500px;height:500px;background:radial-gradient(circle,rgba(59,130,246,0.06) 0%,transparent 70%);pointer-events:none}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+.hdr-row{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px}
+.brand{font-size:11px;letter-spacing:4px;color:var(--text3);text-transform:uppercase;font-weight:500}
+.brand-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--blue);margin-right:8px;vertical-align:middle}
+.date{font-size:11px;color:var(--text3)}
+.sum-row{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:10px}
+.sum-box{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.sum-box::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--blue),transparent);opacity:0.3}
+.sum-box.danger::after{background:linear-gradient(90deg,transparent,var(--red),transparent)}
+.sum-box.success::after{background:linear-gradient(90deg,transparent,var(--green),transparent)}
+.sum-lbl{font-size:10px;color:var(--text3);letter-spacing:1px;margin-bottom:4px}
+.sum-num{font-size:22px;font-weight:700;letter-spacing:-0.5px}
+.sum-num.sm{font-size:19px}
+.pos{color:var(--red)}.neg{color:var(--green)}
+.main{padding:8px 0 40px}
+.cat-header{display:flex;justify-content:space-between;align-items:center;padding:14px 0 8px;margin-top:12px;border-bottom:1px solid var(--border)}
+.cat-label{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text2);font-weight:500}
+.cat-icon{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700}
+.cat-sum{font-size:11px;font-weight:500;padding:2px 10px;border-radius:20px}
+.cat-sum.pos{background:var(--red-bg);color:var(--red)}
+.cat-sum.neg{background:var(--green-bg);color:var(--green)}
+.fund-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}
+.fund-grid.single{grid-template-columns:1fr}
+.fund{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 14px;position:relative;overflow:hidden;transition:border-color .2s}
+.fund:hover{border-color:var(--border-h)}
+.fund .bar{position:absolute;top:0;left:0;bottom:0;width:3px;border-radius:3px 0 0 3px}
+.fund .bar.pos{background:var(--red)}.fund .bar.neg{background:var(--green)}.fund .bar.flat{background:var(--text3)}
+.fund-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}
+.fund-name{font-size:12.5px;font-weight:500;padding-left:6px;flex:1;line-height:1.4}
+.fund-pct{font-size:15px;font-weight:700;letter-spacing:-0.3px;white-space:nowrap;margin-left:8px}
+.fund-bot{display:flex;justify-content:space-between;align-items:center;padding-left:6px}
+.fund-meta{font-size:10.5px;color:var(--text3)}.fund-meta span{margin-right:6px}
+.fund-daily{font-size:10.5px;color:var(--text3);text-align:right}
+.no-val{font-size:10px;color:var(--text3);font-weight:400}
+.dt-status{font-size:11.5px;color:var(--text3);margin-top:8px;display:flex;gap:8px;flex-wrap:wrap}
+.dt-tag{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:20px;font-size:10.5px;background:rgba(255,255,255,0.03);border:1px solid var(--border)}
+.dingtou-row{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}
+.dt-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center}
+.dt-name{font-size:12px;font-weight:400}.dt-amt{font-size:10.5px;color:var(--text3);margin-top:1px}
+.dt-check{font-size:15px}
+.signal-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}
+.sig{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 14px}
+.sig-name{font-size:12px;font-weight:500;margin-bottom:8px}
+.sig-pills{display:flex;flex-wrap:wrap;gap:4px}
+.pill{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:500}
+.pill.trend-up{background:var(--red-bg);color:var(--red)}
+.pill.trend-dn{background:var(--green-bg);color:var(--green)}
+.pill.band-hi{background:var(--red-bg);color:var(--red)}
+.pill.band-lo{background:var(--green-bg);color:var(--green)}
+.pill.band-mid{background:var(--blue-bg);color:var(--blue)}
+.pill.dd-deep{background:var(--gold-bg);color:var(--gold)}
+.pill.dd-ok{background:var(--blue-bg);color:var(--blue)}
+.pill.dd-top{background:var(--red-bg);color:var(--red)}
+.sig-desc{font-size:10px;color:var(--text3);margin-top:6px;line-height:1.5}
+.analysis-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-top:8px;font-size:12px;line-height:1.9;color:var(--text2)}
+.analysis-card.alert{border-left:3px solid var(--gold)}
+.analysis-card.advice{border:1px solid rgba(59,130,246,0.12);background:linear-gradient(135deg,rgba(59,130,246,0.03),rgba(139,92,246,0.03))}
+.analysis-card.focus{border:1px solid rgba(139,92,246,0.12);background:linear-gradient(135deg,rgba(139,92,246,0.03),rgba(236,72,153,0.03))}
+.footer{text-align:center;padding:20px 0 36px;font-size:10px;color:var(--text3);border-top:1px solid var(--border);letter-spacing:0.5px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.fund,.sig,.dt-card,.analysis-card{animation:fadeUp .4s ease both}
+.fund:nth-child(1){animation-delay:.02s}.fund:nth-child(2){animation-delay:.04s}
+.fund:nth-child(3){animation-delay:.06s}.fund:nth-child(4){animation-delay:.08s}
+.fund:nth-child(5){animation-delay:.1s}.fund:nth-child(6){animation-delay:.12s}
+@media(max-width:500px){.sum-row{grid-template-columns:1fr}.fund-grid{grid-template-columns:1fr}.signal-grid{grid-template-columns:1fr}.dingtou-row{grid-template-columns:1fr}.sum-num{font-size:20px}}
 </style>
 </head>
 <body>
 <div class="header"><div class="wrap">
-  <div class="hdr-top"><span class="brand">基金助手 · 每日报告</span><span class="time">2026年5月30日星期六 15:27</span></div>
-  <div class="sum-grid">
-    <div class="sum-card"><div class="sum-label">总资产</div><div class="sum-val">27,531.29</div></div>
-    <div class="sum-card"><div class="sum-label">总持仓收益</div><div class="sum-val neg">-894.53</div></div>
-    <div class="sum-card"><div class="sum-label">今日浮动</div><div class="sum-val neg">-63.52</div></div>
+  <div class="hdr-row"><span class="brand"><span class="brand-dot"></span>基金助手 · 每日报告</span><span class="date">2026年5月30日星期六 16:09</span></div>
+  <div class="sum-row">
+    <div class="sum-box"><div class="sum-lbl">总资产</div><div class="sum-num mono">27,531.29</div></div>
+    <div class="sum-box danger"><div class="sum-lbl">总持仓收益</div><div class="sum-num sm neg mono">-894.53</div></div>
+    <div class="sum-box danger"><div class="sum-lbl">今日浮动</div><div class="sum-num sm neg mono">-63.52</div></div>
   </div>
 </div></div>
 <div class="main"><div class="wrap">
-  <div class="sec-title"><span>🇺🇸 美股科技</span><span class="badge pos">+38.33</span></div>
-          <div class="fund-card">
-            <div class="fc-left">
-              <div class="fc-name">摩根标普500C</div>
-              <div class="fc-meta">持有 2,006.84 · 收益 <span class="pos">+66.84</span></div>
-            </div>
-            <div class="fc-right">
-              <div class="fc-pct pos">+0.64%</div>
-              <div class="fc-profit">+12.84</div>
-            </div>
-          </div>
-          <div class="fund-card">
-            <div class="fc-left">
-              <div class="fc-name">摩根标普500A</div>
-              <div class="fc-meta">持有 400.39 · 收益 <span class="pos">+0.39</span></div>
-            </div>
-            <div class="fc-right">
-              <div class="fc-pct pos">+0.64%</div>
-              <div class="fc-profit">+2.56</div>
-            </div>
-          </div>
-          <div class="fund-card">
-            <div class="fc-left">
-              <div class="fc-name">银华海外数字经济C</div>
-              <div class="fc-meta">持有 712.64 · 收益 <span class="pos">+98.36</span></div>
-            </div>
-            <div class="fc-right">
-              <div class="fc-pct pos">+0.57%</div>
-              <div class="fc-profit">+4.06</div>
-            </div>
-          </div>
-          <div class="fund-card">
-            <div class="fc-left">
-              <div class="fc-name">南方纳斯达克100C</div>
-              <div class="fc-meta">持有 4,009.42 · 收益 <span class="pos">+463.83</span></div>
-            </div>
-            <div class="fc-right">
-              <div class="fc-pct pos">+0.34%</div>
-              <div class="fc-profit">+13.63</div>
-            </div>
-          </div>
-          <div class="fund-card">
-            <div class="fc-left">
-              <div class="fc-name">摩根纳斯达克100A</div>
-              <div class="fc-meta">持有 1,141.63 · 收益 <span class="pos">+101.63</span></div>
-            </div>
-            <div class="fc-right">
-              <div class="fc-pct pos">+0.34%</div>
-              <div class="fc-profit">+3.88</div>
-            </div>
-          </div>
-          <div class="fund-card">
-            <div class="fc-left">
-              <div class="fc-name">南方纳斯达克100A</div>
-              <div class="fc-meta">持有 400.51 · 收益 <span class="pos">+0.51</span></div>
-            </div>
-            <div class="fc-right">
-              <div class="fc-pct pos">+0.34%</div>
-              <div class="fc-profit">+1.36</div>
-            </div>
-          </div><div class="sec-title"><span>🇭🇰 港股</span><span class="badge neg">-0.08</span></div>
-          <div class="fund-card">
-            <div class="fc-left">
-              <div class="fc-name">易方达恒生科技C</div>
-              <div class="fc-meta">持有 97.70 · 收益 <span class="neg">-2.30</span></div>
-            </div>
-            <div class="fc-right">
-              <div class="fc-pct neg">-0.08%</div>
-              <div class="fc-profit">-0.08</div>
-            </div>
-          </div><div class="sec-title"><span>🇨🇳 A股科技</span><span class="badge neg">-28.66</span></div>
-          <div class="fund-card">
-            <div class="fc-left">
-              <div class="fc-name">中欧软件开发指数C</div>
-              <div class="fc-meta">持有 459.62 · 收益 <span class="neg">-40.38</span></div>
-            </div>
-            <div class="fc-right">
-              <div class="fc-pct neg">-1.06%</div>
-              <div class="fc-profit">-4.87</div>
-            </div>
-          </div>
-          <div class="fund-card">
-            <div class="fc-left">
-              <div class="fc-name">富国中证通信设备ETFC</div>
-              <div class="fc-meta">持有 300.00 · 收益 <span class="pos">+0.00</span></div>
-            </div>
-            <div class="fc-right">
-              <div class="fc-pct neg">-2.45%</div>
-              <div class="fc-profit">-7.35</div>
-            </div>
-          </div>
-          <div class="fund-card">
-            <div class="fc-left">
-              <div class="fc-name">嘉实科创芯片C</div>
-              <div class="fc-meta">持有 300.00 · 收益 <span class="pos">+0.00</span></div>
-            </div>
-            <div class="fc-right">
-              <div class="fc-pct neg">-5.48%</div>
-              <div class="fc-profit">-16.44</div>
-            </div>
-          </div><div class="sec-title"><span>🏭 资源周期</span><span class="badge neg">-126.87</span></div>
-          <div class="fund-card">
-            <div class="fc-left">
-              <div class="fc-name">万家工业有色金属C</div>
-              <div class="fc-meta">持有 1,402.58 · 收益 <span class="neg">-97.42</span></div>
-            </div>
-            <div class="fc-right">
-              <div class="fc-pct neg">-1.86%</div>
-              <div class="fc-profit">-26.09</div>
-            </div>
-          </div>
-          <div class="fund-card">
-            <div class="fc-left">
-              <div class="fc-name">富国细分化工C(腾讯)</div>
-              <div class="fc-meta">持有 1,119.49 · 收益 <span class="neg">-80.51</span></div>
-            </div>
-            <div class="fc-right">
-              <div class="fc-pct neg">-2.30%</div>
-              <div class="fc-profit">-25.75</div>
-            </div>
-          </div>
-          <div class="fund-card">
-            <div class="fc-left">
-              <div class="fc-name">富国细分化工ETFC</div>
-              <div class="fc-meta">持有 934.43 · 收益 <span class="neg">-65.57</span></div>
-            </div>
-            <div class="fc-right">
-              <div class="fc-pct neg">-2.30%</div>
-              <div class="fc-profit">-21.49</div>
-            </div>
-          </div>
-          <div class="fund-card">
-            <div class="fc-left">
-              <div class="fc-name">广发稀有金属ETFC</div>
-              <div class="fc-meta">持有 1,784.76 · 收益 <span class="neg">-15.24</span></div>
-            </div>
-            <div class="fc-right">
-              <div class="fc-pct neg">-3.00%</div>
-              <div class="fc-profit">-53.54</div>
-            </div>
-          </div><div class="sec-title"><span>🥇 贵金属</span><span class="badge pos">+28.57</span></div>
-          <div class="fund-card">
-            <div class="fc-left">
-              <div class="fc-name">博时黄金ETFC</div>
-              <div class="fc-meta">持有 1,820.38 · 收益 <span class="neg">-190.61</span></div>
-            </div>
-            <div class="fc-right">
-              <div class="fc-pct pos">+2.41%</div>
-              <div class="fc-profit">+43.87</div>
-            </div>
-          </div>
-          <div class="fund-card">
-            <div class="fc-left">
-              <div class="fc-name">国投瑞银白银LOFA <span class="dim">(暂无估值)</span></div>
-              <div class="fc-meta">持有 549.62 · 收益 <span class="neg">-150.38</span></div>
-            </div>
-            <div class="fc-right">
-              <div class="fc-pct pos">+0.00%</div>
-              <div class="fc-profit">+0.00</div>
-            </div>
-          </div>
-          <div class="fund-card">
-            <div class="fc-left">
-              <div class="fc-name">华夏黄金产业ETFC(腾讯)</div>
-              <div class="fc-meta">持有 2,358.77 · 收益 <span class="neg">-606.19</span></div>
-            </div>
-            <div class="fc-right">
-              <div class="fc-pct neg">-0.47%</div>
-              <div class="fc-profit">-11.09</div>
-            </div>
-          </div>
-          <div class="fund-card">
-            <div class="fc-left">
-              <div class="fc-name">华夏黄金产业ETFC(小倍)</div>
-              <div class="fc-meta">持有 896.07 · 收益 <span class="neg">-103.93</span></div>
-            </div>
-            <div class="fc-right">
-              <div class="fc-pct neg">-0.47%</div>
-              <div class="fc-profit">-4.21</div>
-            </div>
-          </div><div class="sec-title"><span>🌏 其他市场</span><span class="badge pos">+0.00</span></div>
-          <div class="fund-card">
-            <div class="fc-left">
-              <div class="fc-name">宏利印度机会股票A <span class="dim">(暂无估值)</span></div>
-              <div class="fc-meta">持有 101.84 · 收益 <span class="neg">-8.16</span></div>
-            </div>
-            <div class="fc-right">
-              <div class="fc-pct pos">+0.00%</div>
-              <div class="fc-profit">+0.00</div>
-            </div>
-          </div><div class="sec-title"><span>📦 混合其他</span><span class="badge pos">+25.19</span></div>
-          <div class="fund-card">
-            <div class="fc-left">
-              <div class="fc-name">中欧医疗创新C</div>
-              <div class="fc-meta">持有 899.54 · 收益 <span class="neg">-0.46</span></div>
-            </div>
-            <div class="fc-right">
-              <div class="fc-pct pos">+2.67%</div>
-              <div class="fc-profit">+24.02</div>
-            </div>
-          </div>
-          <div class="fund-card">
-            <div class="fc-left">
-              <div class="fc-name">富国价值增长混合C</div>
-              <div class="fc-meta">持有 3,510.33 · 收益 <span class="pos">+210.33</span></div>
-            </div>
-            <div class="fc-right">
-              <div class="fc-pct pos">+0.53%</div>
-              <div class="fc-profit">+18.60</div>
-            </div>
-          </div>
-          <div class="fund-card">
-            <div class="fc-left">
-              <div class="fc-name">华泰柏瑞致远混合C</div>
-              <div class="fc-meta">持有 2,388.25 · 收益 <span class="neg">-411.75</span></div>
-            </div>
-            <div class="fc-right">
-              <div class="fc-pct neg">-0.73%</div>
-              <div class="fc-profit">-17.43</div>
-            </div>
-          </div>
   
-        <div class="sec-title"><span>📌 今日定投</span><span class="badge pos">0元</span></div>
-        <div class="dingtou-status">A股 ❌ · 美股QDII ❌ · A股已投3天 · QDII已投3天</div>
-        <div class="dingtou-grid"><div class="dingtou-item"><div>摩根纳指100A<br><span class="dim">20元/日</span></div><div class="dingtou-check">❌</div></div><div class="dingtou-item"><div>南方纳指100A<br><span class="dim">50元/日</span></div><div class="dingtou-check">❌</div></div><div class="dingtou-item"><div>摩根标普500A<br><span class="dim">50元/日</span></div><div class="dingtou-check">❌</div></div><div class="dingtou-item"><div>富国价值增长混合C<br><span class="dim">100元/日</span></div><div class="dingtou-check">❌</div></div></div>
-  <div class="sec-title"><span>📊 技术信号</span></div>
-          <div class="signal-card">
-            <div class="sig-name">富国细分化工C(腾讯)</div>
-            <div class="sig-row"><span class="tag tag-green">↓弱</span><span class="dim">趋势走弱(MA5<1.5246, 偏离-5.76%)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">中性</span><span class="dim">中性区(下轨1.3827~上轨1.6665)</span></div>
-            <div class="sig-row"><span class="tag tag-gold">-15.28%</span><span class="dim">距60日高点-15.28%，可关注抄底机会</span></div>
+      <div class="cat-header">
+        <div class="cat-label"><span class="cat-icon" style="background:rgba(59,130,246,0.12);color:#60a5fa">US</span>🇺🇸 美股科技</div>
+        <span class="cat-sum pos">+38.33</span>
+      </div>
+      <div class="fund-grid">
+        <div class="fund"><div class="bar pos"></div>
+          <div class="fund-top"><span class="fund-name">摩根标普500C</span><span class="fund-pct pos mono">+0.64%</span></div>
+          <div class="fund-bot"><span class="fund-meta">持有 <span>2,006.84</span> 收益 <span class="pos">+66.84</span></span><span class="fund-daily pos">+12.84</span></div>
+        </div>
+        <div class="fund"><div class="bar pos"></div>
+          <div class="fund-top"><span class="fund-name">摩根标普500A</span><span class="fund-pct pos mono">+0.64%</span></div>
+          <div class="fund-bot"><span class="fund-meta">持有 <span>400.39</span> 收益 <span class="pos">+0.39</span></span><span class="fund-daily pos">+2.56</span></div>
+        </div>
+        <div class="fund"><div class="bar pos"></div>
+          <div class="fund-top"><span class="fund-name">银华海外数字经济C</span><span class="fund-pct pos mono">+0.57%</span></div>
+          <div class="fund-bot"><span class="fund-meta">持有 <span>712.64</span> 收益 <span class="pos">+98.36</span></span><span class="fund-daily pos">+4.06</span></div>
+        </div>
+        <div class="fund"><div class="bar pos"></div>
+          <div class="fund-top"><span class="fund-name">南方纳斯达克100C</span><span class="fund-pct pos mono">+0.34%</span></div>
+          <div class="fund-bot"><span class="fund-meta">持有 <span>4,009.42</span> 收益 <span class="pos">+463.83</span></span><span class="fund-daily pos">+13.63</span></div>
+        </div>
+        <div class="fund"><div class="bar pos"></div>
+          <div class="fund-top"><span class="fund-name">摩根纳斯达克100A</span><span class="fund-pct pos mono">+0.34%</span></div>
+          <div class="fund-bot"><span class="fund-meta">持有 <span>1,141.63</span> 收益 <span class="pos">+101.63</span></span><span class="fund-daily pos">+3.88</span></div>
+        </div>
+        <div class="fund"><div class="bar pos"></div>
+          <div class="fund-top"><span class="fund-name">南方纳斯达克100A</span><span class="fund-pct pos mono">+0.34%</span></div>
+          <div class="fund-bot"><span class="fund-meta">持有 <span>400.51</span> 收益 <span class="pos">+0.51</span></span><span class="fund-daily pos">+1.36</span></div>
+        </div></div>
+      <div class="cat-header">
+        <div class="cat-label"><span class="cat-icon" style="background:rgba(239,68,68,0.12);color:#f87171">HK</span>🇭🇰 港股</div>
+        <span class="cat-sum neg">-0.08</span>
+      </div>
+      <div class="fund-grid single">
+        <div class="fund"><div class="bar neg"></div>
+          <div class="fund-top"><span class="fund-name">易方达恒生科技C</span><span class="fund-pct neg mono">-0.08%</span></div>
+          <div class="fund-bot"><span class="fund-meta">持有 <span>97.70</span> 收益 <span class="neg">-2.30</span></span><span class="fund-daily neg">-0.08</span></div>
+        </div></div>
+      <div class="cat-header">
+        <div class="cat-label"><span class="cat-icon" style="background:rgba(245,158,11,0.12);color:#fbbf24">CN</span>🇨🇳 A股科技</div>
+        <span class="cat-sum neg">-28.66</span>
+      </div>
+      <div class="fund-grid">
+        <div class="fund"><div class="bar neg"></div>
+          <div class="fund-top"><span class="fund-name">中欧软件开发指数C</span><span class="fund-pct neg mono">-1.06%</span></div>
+          <div class="fund-bot"><span class="fund-meta">持有 <span>459.62</span> 收益 <span class="neg">-40.38</span></span><span class="fund-daily neg">-4.87</span></div>
+        </div>
+        <div class="fund"><div class="bar neg"></div>
+          <div class="fund-top"><span class="fund-name">富国中证通信设备ETFC</span><span class="fund-pct neg mono">-2.45%</span></div>
+          <div class="fund-bot"><span class="fund-meta">持有 <span>300.00</span> 收益 <span class="pos">+0.00</span></span><span class="fund-daily neg">-7.35</span></div>
+        </div>
+        <div class="fund"><div class="bar neg"></div>
+          <div class="fund-top"><span class="fund-name">嘉实科创芯片C</span><span class="fund-pct neg mono">-5.48%</span></div>
+          <div class="fund-bot"><span class="fund-meta">持有 <span>300.00</span> 收益 <span class="pos">+0.00</span></span><span class="fund-daily neg">-16.44</span></div>
+        </div></div>
+      <div class="cat-header">
+        <div class="cat-label"><span class="cat-icon" style="background:rgba(16,185,129,0.12);color:#34d399">⛏</span>🏭 资源周期</div>
+        <span class="cat-sum neg">-126.87</span>
+      </div>
+      <div class="fund-grid">
+        <div class="fund"><div class="bar neg"></div>
+          <div class="fund-top"><span class="fund-name">万家工业有色金属C</span><span class="fund-pct neg mono">-1.86%</span></div>
+          <div class="fund-bot"><span class="fund-meta">持有 <span>1,402.58</span> 收益 <span class="neg">-97.42</span></span><span class="fund-daily neg">-26.09</span></div>
+        </div>
+        <div class="fund"><div class="bar neg"></div>
+          <div class="fund-top"><span class="fund-name">富国细分化工C(腾讯)</span><span class="fund-pct neg mono">-2.30%</span></div>
+          <div class="fund-bot"><span class="fund-meta">持有 <span>1,119.49</span> 收益 <span class="neg">-80.51</span></span><span class="fund-daily neg">-25.75</span></div>
+        </div>
+        <div class="fund"><div class="bar neg"></div>
+          <div class="fund-top"><span class="fund-name">富国细分化工ETFC</span><span class="fund-pct neg mono">-2.30%</span></div>
+          <div class="fund-bot"><span class="fund-meta">持有 <span>934.43</span> 收益 <span class="neg">-65.57</span></span><span class="fund-daily neg">-21.49</span></div>
+        </div>
+        <div class="fund"><div class="bar neg"></div>
+          <div class="fund-top"><span class="fund-name">广发稀有金属ETFC</span><span class="fund-pct neg mono">-3.00%</span></div>
+          <div class="fund-bot"><span class="fund-meta">持有 <span>1,784.76</span> 收益 <span class="neg">-15.24</span></span><span class="fund-daily neg">-53.54</span></div>
+        </div></div>
+      <div class="cat-header">
+        <div class="cat-label"><span class="cat-icon" style="background:rgba(234,179,8,0.12);color:#facc15">🥇</span>🥇 贵金属</div>
+        <span class="cat-sum pos">+28.57</span>
+      </div>
+      <div class="fund-grid">
+        <div class="fund"><div class="bar pos"></div>
+          <div class="fund-top"><span class="fund-name">博时黄金ETFC</span><span class="fund-pct pos mono">+2.41%</span></div>
+          <div class="fund-bot"><span class="fund-meta">持有 <span>1,820.38</span> 收益 <span class="neg">-190.61</span></span><span class="fund-daily pos">+43.87</span></div>
+        </div>
+        <div class="fund"><div class="bar flat"></div>
+          <div class="fund-top"><span class="fund-name">国投瑞银白银LOFA <span class="no-val">(暂无估值)</span></span><span class="fund-pct  mono" style="color:var(--text3)">+0.00%</span></div>
+          <div class="fund-bot"><span class="fund-meta">持有 <span>549.62</span> 收益 <span class="neg">-150.38</span></span><span class="fund-daily ">+0.00</span></div>
+        </div>
+        <div class="fund"><div class="bar neg"></div>
+          <div class="fund-top"><span class="fund-name">华夏黄金产业ETFC(腾讯)</span><span class="fund-pct neg mono">-0.47%</span></div>
+          <div class="fund-bot"><span class="fund-meta">持有 <span>2,358.77</span> 收益 <span class="neg">-606.19</span></span><span class="fund-daily neg">-11.09</span></div>
+        </div>
+        <div class="fund"><div class="bar neg"></div>
+          <div class="fund-top"><span class="fund-name">华夏黄金产业ETFC(小倍)</span><span class="fund-pct neg mono">-0.47%</span></div>
+          <div class="fund-bot"><span class="fund-meta">持有 <span>896.07</span> 收益 <span class="neg">-103.93</span></span><span class="fund-daily neg">-4.21</span></div>
+        </div></div>
+      <div class="cat-header">
+        <div class="cat-label"><span class="cat-icon" style="background:rgba(236,72,153,0.12);color:#f472b6">📦</span>🌏 其他市场</div>
+        <span class="cat-sum pos">+0.00</span>
+      </div>
+      <div class="fund-grid single">
+        <div class="fund"><div class="bar flat"></div>
+          <div class="fund-top"><span class="fund-name">宏利印度机会股票A <span class="no-val">(暂无估值)</span></span><span class="fund-pct  mono" style="color:var(--text3)">+0.00%</span></div>
+          <div class="fund-bot"><span class="fund-meta">持有 <span>101.84</span> 收益 <span class="neg">-8.16</span></span><span class="fund-daily ">+0.00</span></div>
+        </div></div>
+      <div class="cat-header">
+        <div class="cat-label"><span class="cat-icon" style="background:rgba(236,72,153,0.12);color:#f472b6">📦</span>📦 混合其他</div>
+        <span class="cat-sum pos">+25.19</span>
+      </div>
+      <div class="fund-grid">
+        <div class="fund"><div class="bar pos"></div>
+          <div class="fund-top"><span class="fund-name">中欧医疗创新C</span><span class="fund-pct pos mono">+2.67%</span></div>
+          <div class="fund-bot"><span class="fund-meta">持有 <span>899.54</span> 收益 <span class="neg">-0.46</span></span><span class="fund-daily pos">+24.02</span></div>
+        </div>
+        <div class="fund"><div class="bar pos"></div>
+          <div class="fund-top"><span class="fund-name">富国价值增长混合C</span><span class="fund-pct pos mono">+0.53%</span></div>
+          <div class="fund-bot"><span class="fund-meta">持有 <span>3,510.33</span> 收益 <span class="pos">+210.33</span></span><span class="fund-daily pos">+18.60</span></div>
+        </div>
+        <div class="fund"><div class="bar neg"></div>
+          <div class="fund-top"><span class="fund-name">华泰柏瑞致远混合C</span><span class="fund-pct neg mono">-0.73%</span></div>
+          <div class="fund-bot"><span class="fund-meta">持有 <span>2,388.25</span> 收益 <span class="neg">-411.75</span></span><span class="fund-daily neg">-17.43</span></div>
+        </div></div>
+  
+      <div class="cat-header">
+        <div class="cat-label"><span class="cat-icon" style="background:rgba(59,130,246,0.12);color:#60a5fa">📌</span>今日定投</div>
+        <span class="cat-sum" style="background:var(--blue-bg);color:var(--blue)">0元</span>
+      </div>
+      <div class="dt-status">
+        <span class="dt-tag">A股 ❌ 休市</span>
+        <span class="dt-tag">美股QDII ❌ 休市</span>
+        <span class="dt-tag">A股已投 3天</span>
+        <span class="dt-tag">QDII已投 3天</span>
+      </div>
+      <div class="dingtou-row">
+        <div class="dt-card">
+          <div><div class="dt-name">摩根纳指100A</div><div class="dt-amt">20元/日</div></div>
+          <div class="dt-check">❌</div>
+        </div>
+        <div class="dt-card">
+          <div><div class="dt-name">南方纳指100A</div><div class="dt-amt">50元/日</div></div>
+          <div class="dt-check">❌</div>
+        </div>
+        <div class="dt-card">
+          <div><div class="dt-name">摩根标普500A</div><div class="dt-amt">50元/日</div></div>
+          <div class="dt-check">❌</div>
+        </div>
+        <div class="dt-card">
+          <div><div class="dt-name">富国价值增长混合C</div><div class="dt-amt">100元/日</div></div>
+          <div class="dt-check">❌</div>
+        </div></div>
+  
+      <div class="cat-header">
+        <div class="cat-label"><span class="cat-icon" style="background:rgba(139,92,246,0.12);color:#a78bfa">📊</span>技术信号</div>
+      </div>
+      <div class="signal-grid">
+        <div class="sig">
+          <div class="sig-name">富国细分化工C(腾讯)</div>
+          <div class="sig-pills">
+            <span class="pill trend-dn">↓ 趋势走弱</span>
+            <span class="pill band-mid">中性区</span>
+            <span class="pill dd-deep">-15.28% 回撤</span>
           </div>
-          <div class="signal-card">
-            <div class="sig-name">富国细分化工ETFC</div>
-            <div class="sig-row"><span class="tag tag-green">↓弱</span><span class="dim">趋势走弱(MA5<1.5246, 偏离-5.76%)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">中性</span><span class="dim">中性区(下轨1.3827~上轨1.6665)</span></div>
-            <div class="sig-row"><span class="tag tag-gold">-15.28%</span><span class="dim">距60日高点-15.28%，可关注抄底机会</span></div>
+          <div class="sig-desc">中性区(下轨1.3827~上轨1.6665)</div>
+        </div>
+        <div class="sig">
+          <div class="sig-name">富国细分化工ETFC</div>
+          <div class="sig-pills">
+            <span class="pill trend-dn">↓ 趋势走弱</span>
+            <span class="pill band-mid">中性区</span>
+            <span class="pill dd-deep">-15.28% 回撤</span>
           </div>
-          <div class="signal-card">
-            <div class="sig-name">华夏黄金产业ETFC(腾讯)</div>
-            <div class="sig-row"><span class="tag tag-green">↓弱</span><span class="dim">趋势走弱(MA5<1.5190, 偏离-5.90%)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">中性</span><span class="dim">中性区(下轨1.3265~上轨1.7115)</span></div>
-            <div class="sig-row"><span class="tag tag-gold">-17.46%</span><span class="dim">距60日高点-17.46%，可关注抄底机会</span></div>
+          <div class="sig-desc">中性区(下轨1.3827~上轨1.6665)</div>
+        </div>
+        <div class="sig">
+          <div class="sig-name">华夏黄金产业ETFC(腾讯)</div>
+          <div class="sig-pills">
+            <span class="pill trend-dn">↓ 趋势走弱</span>
+            <span class="pill band-mid">中性区</span>
+            <span class="pill dd-deep">-17.46% 回撤</span>
           </div>
-          <div class="signal-card">
-            <div class="sig-name">华夏黄金产业ETFC(小倍)</div>
-            <div class="sig-row"><span class="tag tag-green">↓弱</span><span class="dim">趋势走弱(MA5<1.5190, 偏离-5.90%)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">中性</span><span class="dim">中性区(下轨1.3265~上轨1.7115)</span></div>
-            <div class="sig-row"><span class="tag tag-gold">-17.46%</span><span class="dim">距60日高点-17.46%，可关注抄底机会</span></div>
+          <div class="sig-desc">中性区(下轨1.3265~上轨1.7115)</div>
+        </div>
+        <div class="sig">
+          <div class="sig-name">华夏黄金产业ETFC(小倍)</div>
+          <div class="sig-pills">
+            <span class="pill trend-dn">↓ 趋势走弱</span>
+            <span class="pill band-mid">中性区</span>
+            <span class="pill dd-deep">-17.46% 回撤</span>
           </div>
-          <div class="signal-card">
-            <div class="sig-name">国投瑞银白银LOFA</div>
-            <div class="sig-row"><span class="tag tag-green">↓弱</span><span class="dim">趋势走弱(MA5<2.1687, 偏离-3.39%)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">中性</span><span class="dim">中性区(下轨1.9185~上轨2.4188)</span></div>
-            <div class="sig-row"><span class="tag tag-gold">-15.88%</span><span class="dim">距60日高点-15.88%，可关注抄底机会</span></div>
+          <div class="sig-desc">中性区(下轨1.3265~上轨1.7115)</div>
+        </div>
+        <div class="sig">
+          <div class="sig-name">国投瑞银白银LOFA</div>
+          <div class="sig-pills">
+            <span class="pill trend-dn">↓ 趋势走弱</span>
+            <span class="pill band-mid">中性区</span>
+            <span class="pill dd-deep">-15.88% 回撤</span>
           </div>
-          <div class="signal-card">
-            <div class="sig-name">南方纳斯达克100C</div>
-            <div class="sig-row"><span class="tag tag-red">↑强</span><span class="dim">趋势走强(MA5>2.2666, 偏离+2.56%)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">中性</span><span class="dim">中性区(下轨2.1436~上轨2.3896)</span></div>
-            <div class="sig-row"><span class="tag tag-red">0%</span><span class="dim">距60日高点0.00%，注意追高风险</span></div>
+          <div class="sig-desc">中性区(下轨1.9185~上轨2.4188)</div>
+        </div>
+        <div class="sig">
+          <div class="sig-name">南方纳斯达克100C</div>
+          <div class="sig-pills">
+            <span class="pill trend-up">↑ 趋势走强</span>
+            <span class="pill band-mid">中性区</span>
+            <span class="pill dd-top">0% 回撤</span>
           </div>
-          <div class="signal-card">
-            <div class="sig-name">摩根纳斯达克100A</div>
-            <div class="sig-row"><span class="tag tag-red">↑强</span><span class="dim">趋势走强(MA5>1.7375, 偏离+2.50%)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">中性</span><span class="dim">中性区(下轨1.6453~上轨1.8298)</span></div>
-            <div class="sig-row"><span class="tag tag-red">0%</span><span class="dim">距60日高点0.00%，注意追高风险</span></div>
+          <div class="sig-desc">中性区(下轨2.1436~上轨2.3896)</div>
+        </div>
+        <div class="sig">
+          <div class="sig-name">摩根纳斯达克100A</div>
+          <div class="sig-pills">
+            <span class="pill trend-up">↑ 趋势走强</span>
+            <span class="pill band-mid">中性区</span>
+            <span class="pill dd-top">0% 回撤</span>
           </div>
-          <div class="signal-card">
-            <div class="sig-name">南方纳斯达克100A</div>
-            <div class="sig-row"><span class="tag tag-red">↑强</span><span class="dim">趋势走强(MA5>2.2761, 偏离+2.56%)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">中性</span><span class="dim">中性区(下轨2.1526~上轨2.3996)</span></div>
-            <div class="sig-row"><span class="tag tag-red">0%</span><span class="dim">距60日高点0.00%，注意追高风险</span></div>
+          <div class="sig-desc">中性区(下轨1.6453~上轨1.8298)</div>
+        </div>
+        <div class="sig">
+          <div class="sig-name">南方纳斯达克100A</div>
+          <div class="sig-pills">
+            <span class="pill trend-up">↑ 趋势走强</span>
+            <span class="pill band-mid">中性区</span>
+            <span class="pill dd-top">0% 回撤</span>
           </div>
-          <div class="signal-card">
-            <div class="sig-name">摩根标普500C</div>
-            <div class="sig-row"><span class="tag tag-red">↑强</span><span class="dim">趋势走强(MA5>1.6442, 偏离+1.30%)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">中性</span><span class="dim">中性区(下轨1.5983~上轨1.6901)</span></div>
-            <div class="sig-row"><span class="tag tag-red">0%</span><span class="dim">距60日高点0.00%，注意追高风险</span></div>
+          <div class="sig-desc">中性区(下轨2.1526~上轨2.3996)</div>
+        </div>
+        <div class="sig">
+          <div class="sig-name">摩根标普500C</div>
+          <div class="sig-pills">
+            <span class="pill trend-up">↑ 趋势走强</span>
+            <span class="pill band-mid">中性区</span>
+            <span class="pill dd-top">0% 回撤</span>
           </div>
-          <div class="signal-card">
-            <div class="sig-name">摩根标普500A</div>
-            <div class="sig-row"><span class="tag tag-red">↑强</span><span class="dim">趋势走强(MA5>1.6584, 偏离+1.31%)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">中性</span><span class="dim">中性区(下轨1.6120~上轨1.7049)</span></div>
-            <div class="sig-row"><span class="tag tag-red">0%</span><span class="dim">距60日高点0.00%，注意追高风险</span></div>
+          <div class="sig-desc">中性区(下轨1.5983~上轨1.6901)</div>
+        </div>
+        <div class="sig">
+          <div class="sig-name">摩根标普500A</div>
+          <div class="sig-pills">
+            <span class="pill trend-up">↑ 趋势走强</span>
+            <span class="pill band-mid">中性区</span>
+            <span class="pill dd-top">0% 回撤</span>
           </div>
-          <div class="signal-card">
-            <div class="sig-name">银华海外数字经济C</div>
-            <div class="sig-row"><span class="tag tag-red">↑强</span><span class="dim">趋势走强(MA5>2.0271, 偏离+4.38%)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">中性</span><span class="dim">中性区(下轨1.8531~上轨2.2012)</span></div>
-            <div class="sig-row"><span class="tag tag-red">0%</span><span class="dim">距60日高点0.00%，注意追高风险</span></div>
+          <div class="sig-desc">中性区(下轨1.6120~上轨1.7049)</div>
+        </div>
+        <div class="sig">
+          <div class="sig-name">银华海外数字经济C</div>
+          <div class="sig-pills">
+            <span class="pill trend-up">↑ 趋势走强</span>
+            <span class="pill band-mid">中性区</span>
+            <span class="pill dd-top">0% 回撤</span>
           </div>
-          <div class="signal-card">
-            <div class="sig-name">富国价值增长混合C</div>
-            <div class="sig-row"><span class="tag tag-red">↑强</span><span class="dim">趋势走强(MA5>1.5904, 偏离+7.19%)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">中性</span><span class="dim">中性区(下轨1.4098~上轨1.7709)</span></div>
-            <div class="sig-row"><span class="tag tag-red">-1.77%</span><span class="dim">距60日高点-1.77%，注意追高风险</span></div>
+          <div class="sig-desc">中性区(下轨1.8531~上轨2.2012)</div>
+        </div>
+        <div class="sig">
+          <div class="sig-name">富国价值增长混合C</div>
+          <div class="sig-pills">
+            <span class="pill trend-up">↑ 趋势走强</span>
+            <span class="pill band-mid">中性区</span>
+            <span class="pill dd-top">-1.77% 回撤</span>
           </div>
-          <div class="signal-card">
-            <div class="sig-name">易方达恒生科技C</div>
-            <div class="sig-row"><span class="tag tag-green">↓弱</span><span class="dim">趋势走弱(MA5<1.1654, 偏离-1.12%)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">中性</span><span class="dim">中性区(下轨1.1178~上轨1.2129)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">-4.74%</span><span class="dim">距60日高点-4.74%</span></div>
+          <div class="sig-desc">中性区(下轨1.4098~上轨1.7709)</div>
+        </div>
+        <div class="sig">
+          <div class="sig-name">易方达恒生科技C</div>
+          <div class="sig-pills">
+            <span class="pill trend-dn">↓ 趋势走弱</span>
+            <span class="pill band-mid">中性区</span>
+            <span class="pill dd-ok">-4.74% 回撤</span>
           </div>
-          <div class="signal-card">
-            <div class="sig-name">富国中证通信设备ETFC</div>
-            <div class="sig-row"><span class="tag tag-red">↑强</span><span class="dim">趋势走强(MA5>3.6671, 偏离+4.14%)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">中性</span><span class="dim">中性区(下轨3.3254~上轨4.0088)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">-2.33%</span><span class="dim">距60日高点-2.33%</span></div>
+          <div class="sig-desc">中性区(下轨1.1178~上轨1.2129)</div>
+        </div>
+        <div class="sig">
+          <div class="sig-name">富国中证通信设备ETFC</div>
+          <div class="sig-pills">
+            <span class="pill trend-up">↑ 趋势走强</span>
+            <span class="pill band-mid">中性区</span>
+            <span class="pill dd-ok">-2.33% 回撤</span>
           </div>
-          <div class="signal-card">
-            <div class="sig-name">嘉实科创芯片C</div>
-            <div class="sig-row"><span class="tag tag-red">↑强</span><span class="dim">趋势走强(MA5>2.8226, 偏离+6.99%)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">中性</span><span class="dim">中性区(下轨2.4495~上轨3.1957)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">-7.55%</span><span class="dim">距60日高点-7.55%</span></div>
+          <div class="sig-desc">中性区(下轨3.3254~上轨4.0088)</div>
+        </div>
+        <div class="sig">
+          <div class="sig-name">嘉实科创芯片C</div>
+          <div class="sig-pills">
+            <span class="pill trend-up">↑ 趋势走强</span>
+            <span class="pill band-mid">中性区</span>
+            <span class="pill dd-ok">-7.55% 回撤</span>
           </div>
-          <div class="signal-card">
-            <div class="sig-name">中欧软件开发指数C</div>
-            <div class="sig-row"><span class="tag tag-green">↓弱</span><span class="dim">趋势走弱(MA5<1.7084, 偏离-0.17%)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">中性</span><span class="dim">中性区(下轨1.6693~上轨1.7476)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">-2.23%</span><span class="dim">距60日高点-2.23%</span></div>
+          <div class="sig-desc">中性区(下轨2.4495~上轨3.1957)</div>
+        </div>
+        <div class="sig">
+          <div class="sig-name">中欧软件开发指数C</div>
+          <div class="sig-pills">
+            <span class="pill trend-dn">↓ 趋势走弱</span>
+            <span class="pill band-mid">中性区</span>
+            <span class="pill dd-ok">-2.23% 回撤</span>
           </div>
-          <div class="signal-card">
-            <div class="sig-name">万家工业有色金属C</div>
-            <div class="sig-row"><span class="tag tag-green">↓弱</span><span class="dim">趋势走弱(MA5<1.7685, 偏离-1.20%)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">中性</span><span class="dim">中性区(下轨1.6466~上轨1.8904)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">-8.59%</span><span class="dim">距60日高点-8.59%</span></div>
+          <div class="sig-desc">中性区(下轨1.6693~上轨1.7476)</div>
+        </div>
+        <div class="sig">
+          <div class="sig-name">万家工业有色金属C</div>
+          <div class="sig-pills">
+            <span class="pill trend-dn">↓ 趋势走弱</span>
+            <span class="pill band-mid">中性区</span>
+            <span class="pill dd-ok">-8.59% 回撤</span>
           </div>
-          <div class="signal-card">
-            <div class="sig-name">广发稀有金属ETFC</div>
-            <div class="sig-row"><span class="tag tag-green">↓弱</span><span class="dim">趋势走弱(MA5<2.0850, 偏离-3.70%)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">中性</span><span class="dim">中性区(下轨1.8962~上轨2.2739)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">-12.27%</span><span class="dim">距60日高点-12.27%</span></div>
+          <div class="sig-desc">中性区(下轨1.6466~上轨1.8904)</div>
+        </div>
+        <div class="sig">
+          <div class="sig-name">广发稀有金属ETFC</div>
+          <div class="sig-pills">
+            <span class="pill trend-dn">↓ 趋势走弱</span>
+            <span class="pill band-mid">中性区</span>
+            <span class="pill dd-ok">-12.27% 回撤</span>
           </div>
-          <div class="signal-card">
-            <div class="sig-name">博时黄金ETFC</div>
-            <div class="sig-row"><span class="tag tag-green">↓弱</span><span class="dim">趋势走弱(MA5<3.1629, 偏离-2.25%)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">中性</span><span class="dim">中性区(下轨3.0343~上轨3.2916)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">-5.19%</span><span class="dim">距60日高点-5.19%</span></div>
+          <div class="sig-desc">中性区(下轨1.8962~上轨2.2739)</div>
+        </div>
+        <div class="sig">
+          <div class="sig-name">博时黄金ETFC</div>
+          <div class="sig-pills">
+            <span class="pill trend-dn">↓ 趋势走弱</span>
+            <span class="pill band-mid">中性区</span>
+            <span class="pill dd-ok">-5.19% 回撤</span>
           </div>
-          <div class="signal-card">
-            <div class="sig-name">宏利印度机会股票A</div>
-            <div class="sig-row"><span class="tag tag-red">↑强</span><span class="dim">趋势走强(MA5>1.2978, 偏离+0.11%)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">中性</span><span class="dim">中性区(下轨1.2679~上轨1.3278)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">-2.16%</span><span class="dim">距60日高点-2.16%</span></div>
+          <div class="sig-desc">中性区(下轨3.0343~上轨3.2916)</div>
+        </div>
+        <div class="sig">
+          <div class="sig-name">宏利印度机会股票A</div>
+          <div class="sig-pills">
+            <span class="pill trend-up">↑ 趋势走强</span>
+            <span class="pill band-mid">中性区</span>
+            <span class="pill dd-ok">-2.16% 回撤</span>
           </div>
-          <div class="signal-card">
-            <div class="sig-name">华泰柏瑞致远混合C</div>
-            <div class="sig-row"><span class="tag tag-green">↓弱</span><span class="dim">趋势走弱(MA5<1.4159, 偏离-2.50%)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">中性</span><span class="dim">中性区(下轨1.3110~上轨1.5209)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">-10.03%</span><span class="dim">距60日高点-10.03%</span></div>
+          <div class="sig-desc">中性区(下轨1.2679~上轨1.3278)</div>
+        </div>
+        <div class="sig">
+          <div class="sig-name">华泰柏瑞致远混合C</div>
+          <div class="sig-pills">
+            <span class="pill trend-dn">↓ 趋势走弱</span>
+            <span class="pill band-mid">中性区</span>
+            <span class="pill dd-ok">-10.03% 回撤</span>
           </div>
-          <div class="signal-card">
-            <div class="sig-name">中欧医疗创新C</div>
-            <div class="sig-row"><span class="tag tag-green">↓弱</span><span class="dim">趋势走弱(MA5<1.3059, 偏离-3.65%)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">中性</span><span class="dim">中性区(下轨1.2062~上轨1.4055)</span></div>
-            <div class="sig-row"><span class="tag tag-blue">-9.5%</span><span class="dim">距60日高点-9.50%</span></div>
+          <div class="sig-desc">中性区(下轨1.3110~上轨1.5209)</div>
+        </div>
+        <div class="sig">
+          <div class="sig-name">中欧医疗创新C</div>
+          <div class="sig-pills">
+            <span class="pill trend-dn">↓ 趋势走弱</span>
+            <span class="pill band-mid">中性区</span>
+            <span class="pill dd-ok">-9.5% 回撤</span>
           </div>
-  <div class="sec-title"><span>⚠️ 预警信号</span></div><div class="alert-card">- 嘉实科创芯片C今日跌幅超-3%（-5.48%）：重点预警<br>- 广发稀有金属ETFC今日跌幅超-3%（-3%）：重点预警<br>- 华夏黄金产业ETFC(腾讯)持仓亏损超-15%（-606.19元，亏损-25.7%）：深套提醒<br>- 国投瑞银白银LOFA持仓亏损超-15%（-150.38元，亏损-27.36%）：深套提醒<br>- 华泰柏瑞致远混合C持仓亏损超-15%（-411.75元，亏损-17.24%）：深套提醒<br>- 博时黄金ETFC今日涨幅超+2.41%，但未达+3%阈值，不标注异常拉升<br>- 中欧医疗创新C今日涨幅+2.67%，接近异常拉升阈值</div><div class="sec-title"><span>💡 操作建议</span></div><div class="advice-card">今日无基金出现“低位区+趋势走强”的共振买入信号，也无“高位区+趋势走弱”的共振卖出信号，操作建议如下：<br>1. 按兵不动：今日为周末，A股与QDII均休市，且市场整体震荡，无明确操作窗口。<br>2. 关注贵金属与化工抄底机会：华夏黄金产业ETFC（回撤-17.46%）和富国细分化工（回撤-15.28%）已进入中度回撤区域，趋势虽走弱但回撤幅度较深，可纳入观察列表，待趋势转强时考虑分批建仓或补仓</div>
+          <div class="sig-desc">中性区(下轨1.2062~上轨1.4055)</div>
+        </div></div>
+  
+      <div class="cat-header">
+        <div class="cat-label"><span class="cat-icon" style="background:rgba(245,158,11,0.12);color:#fbbf24">⚠️</span>预警信号</div>
+      </div>
+      <div class="analysis-card alert">- 今日涨幅超+3%：无<br>- 今日跌幅超-3%：嘉实科创芯片C（-5.48%）、广发稀有金属ETFC（-3%）<br>- 持仓亏损超-15%：华夏黄金产业ETFC(腾讯)（持仓收益-606.19元，-25.7%）、国投瑞银白银LOFA（持仓收益-150.38元，-27.3%）、华泰柏瑞致远混合C（持仓收益-411.75元，-17.2%）<br>- 贵金属今日跌超-2%：无（博时黄金上涨2.41%，黄金产业只跌0.47%）</div>
+      <div class="cat-header">
+        <div class="cat-label"><span class="cat-icon" style="background:rgba(59,130,246,0.12);color:#60a5fa">💡</span>操作建议</div>
+      </div>
+      <div class="analysis-card advice">根据持仓数据和技术信号，建议按兵不动，核心理由：<br>1. 共振买入信号尚未出现：虽有基金（如富国细分化工、华夏黄金）出现中等回撤，但趋势均为绿色（走弱），尚未形成“低位+趋势走强”的共振买入信号，不适合此时抄底。<br>2. 贵金属板块（如华夏黄金）虽有-15%以上的深度回撤，但趋势仍在走弱，且持有亏损较深，继续等待企稳信号更为稳妥。<br>3. 全球股市（美股、港股、A股科技）今日为震荡或下跌，部分A股基金如嘉实科创芯片跌幅较大（-5.48%），短期波动剧烈，不宜追涨杀跌。<br>4. 没有基金</div>
 </div></div>
 <div class="footer"><div class="wrap">数据来源：天天基金 · 技术信号仅供参考，不构成投资建议<br>由 Claude + DeepSeek + 扣子 自动生成</div></div>
 </body></html>
