@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>持仓管理 · 基金助手</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f0f2f5;--card:#fff;--border:#e8ecf1;--text:#1a1d26;--text2:#5a6178;--text3:#9ca3b8;--blue:#3366ff;--blue-bg:#eef2ff;--red:#e74c3c;--red-bg:#fef2f0;--green:#27ae60;--green-bg:#eefbf3;--gold:#f5a623;--radius:14px;--shadow:0 1px 3px rgba(0,0,0,0.04)}
+body{font-family:'Noto Sans SC','DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.wrap{max-width:900px;margin:0 auto;padding:20px}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.title{font-size:20px;font-weight:700;display:flex;align-items:center;gap:8px}
+.title .icon{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,#3366ff,#7c5cfc);display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px}
+.btn{padding:8px 18px;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s}
+.btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{opacity:.9}
+.btn-success{background:var(--green);color:#fff}.btn-success:hover{opacity:.9}
+.btn-danger{background:var(--red-bg);color:var(--red);font-size:11px;padding:5px 10px}.btn-danger:hover{background:var(--red);color:#fff}
+.btn-outline{background:transparent;border:1px solid var(--border);color:var(--text2)}.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;box-shadow:var(--shadow);margin-bottom:16px}
+.card-title{font-size:14px;font-weight:600;color:var(--text2);margin-bottom:16px;display:flex;align-items:center;justify-content:space-between}
+.status{padding:8px 16px;border-radius:8px;font-size:12px;margin-bottom:16px;display:none}
+.status.ok{display:block;background:var(--green-bg);color:var(--green)}
+.status.err{display:block;background:var(--red-bg);color:var(--red)}
+.status.info{display:block;background:var(--blue-bg);color:var(--blue)}
+/* Token Input */
+.token-row{display:flex;gap:8px;margin-bottom:16px}
+.token-row input{flex:1;padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-size:12px;font-family:monospace}
+/* Table */
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{text-align:left;color:var(--text3);font-weight:500;padding:8px 10px;border-bottom:1px solid var(--border);font-size:11px}
+td{padding:8px 10px;border-bottom:1px solid var(--bg)}
+tr:hover{background:var(--bg)}
+td input,td select{width:100%;padding:5px 8px;border:1px solid var(--border);border-radius:6px;font-size:12px;font-family:inherit}
+td input:focus,td select:focus{outline:none;border-color:var(--blue)}
+td input[type=number]{text-align:right;font-family:'DM Sans',monospace}
+.cat-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:600}
+/* Add Form */
+.add-row{display:grid;grid-template-columns:100px 1fr 120px 120px 160px 60px;gap:8px;align-items:center;margin-top:12px;padding:12px;background:var(--bg);border-radius:8px}
+.add-row input,.add-row select{padding:6px 8px;border:1px solid var(--border);border-radius:6px;font-size:12px}
+.add-row .btn{padding:6px 12px}
+/* DCA Section */
+.dca-row{display:grid;grid-template-columns:100px 1fr 100px 100px 100px 80px 60px;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid var(--bg)}
+.dca-row input,.dca-row select{padding:5px 8px;border:1px solid var(--border);border-radius:6px;font-size:12px}
+/* Concentration */
+.conc-bar{display:flex;height:24px;border-radius:6px;overflow:hidden;gap:2px;margin:12px 0}
+.conc-bar div{border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:#fff;min-width:20px}
+.conc-legend{display:flex;flex-wrap:wrap;gap:10px;font-size:11px;color:var(--text2)}
+.conc-item{display:flex;align-items:center;gap:4px}
+.conc-dot{width:10px;height:10px;border-radius:3px}
+.conc-warn{color:var(--gold);font-weight:600;font-size:10px;margin-left:4px}
+@media(max-width:640px){.add-row{grid-template-columns:1fr 1fr}.dca-row{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="header">
+  <div class="title"><span class="icon">⚙️</span>持仓管理</div>
+  <div style="display:flex;gap:8px">
+    <a href="index.html" class="btn btn-outline">← 返回日报</a>
+    <button class="btn btn-success" onclick="saveAll()">💾 保存到云端</button>
+  </div>
+</div>
+
+<div id="statusBar" class="status"></div>
+
+<div class="card">
+  <div class="card-title">GitHub 连接 <span style="font-size:10px;color:var(--text3)">数据存储在你的 GitHub 仓库</span></div>
+  <div class="token-row">
+    <input type="password" id="tokenInput" placeholder="输入 GitHub Token（首次需要，之后自动记住）">
+    <button class="btn btn-primary" onclick="loadData()">连接并加载</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">
+    📊 持仓集中度
+    <span style="font-size:10px;color:var(--text3)">单一分类超30%建议分散</span>
+  </div>
+  <div id="concBar" class="conc-bar"></div>
+  <div id="concLegend" class="conc-legend"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">💼 基金持仓 <span id="fundCount" style="font-size:11px;color:var(--text3)"></span></div>
+  <table>
+    <thead><tr><th>代码</th><th>名称</th><th>持有金额</th><th>持仓收益</th><th>分类</th><th>操作</th></tr></thead>
+    <tbody id="fundBody"></tbody>
+  </table>
+  <div class="add-row">
+    <input id="addCode" placeholder="基金代码">
+    <input id="addName" placeholder="基金名称">
+    <input id="addAmount" type="number" placeholder="金额" step="0.01">
+    <input id="addProfit" type="number" placeholder="收益" step="0.01">
+    <select id="addCat">
+      <option value="🇺🇸 美股科技">🇺🇸 美股科技</option>
+      <option value="🇭🇰 港股">🇭🇰 港股</option>
+      <option value="🇨🇳 A股科技">🇨🇳 A股科技</option>
+      <option value="🏭 资源周期">🏭 资源周期</option>
+      <option value="🥇 贵金属">🥇 贵金属</option>
+      <option value="🌏 其他市场">🌏 其他市场</option>
+      <option value="📦 混合其他">📦 混合其他</option>
+    </select>
+    <button class="btn btn-primary" onclick="addFund()">+ 添加</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">📌 定投计划</div>
+  <div id="dcaBody"></div>
+  <div class="add-row" style="grid-template-columns:100px 1fr 80px 80px 80px 80px 60px">
+    <input id="dcaCode" placeholder="代码">
+    <input id="dcaName" placeholder="名称">
+    <input id="dcaCost" type="number" placeholder="总成本" step="0.01">
+    <input id="dcaAmount" type="number" placeholder="总金额" step="0.01">
+    <input id="dcaDaily" type="number" placeholder="日投" step="1">
+    <select id="dcaType"><option value="true">QDII</option><option value="false">A股</option></select>
+    <button class="btn btn-primary" onclick="addDCA()">+ 添加</button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">⚙️ 基准日期</div>
+  <div style="display:flex;gap:8px;align-items:center">
+    <input id="baselineDate" type="date" style="padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px">
+    <span style="font-size:11px;color:var(--text3)">定投天数从这个日期开始计算</span>
+  </div>
+</div>
+</div>
+
+<script>
+const OWNER='yyy1107yyy',REPO='fund-assistant',FILE='portfolio.json';
+let portfolio={funds:[],dingTou:{},baselineDate:'2026-05-26'};
+let token='';
+
+function getToken(){
+  token=document.getElementById('tokenInput').value||localStorage.getItem('gh_token')||'';
+  if(token)localStorage.setItem('gh_token',token);
+  return token;
+}
+
+function showStatus(msg,type){
+  const bar=document.getElementById('statusBar');
+  bar.textContent=msg;bar.className='status '+type;
+  if(type==='ok')setTimeout(()=>{bar.style.display='none';},3000);
+}
+
+async function ghGet(){
+  const t=getToken();if(!t){showStatus('请输入 GitHub Token','err');return null;}
+  try{
+    const r=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${FILE}`,{headers:{'Authorization':'token '+t,'Accept':'application/vnd.github.v3+json'}});
+    if(!r.ok)return null;
+    const d=await r.json();
+    const bin=atob(d.content.replace(/\n/g,''));
+    const bytes=new Uint8Array(bin.length);
+    for(let i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);
+    return{data:JSON.parse(new TextDecoder().decode(bytes)),sha:d.sha};
+  }catch(e){return null;}
+}
+
+async function ghPut(content,sha){
+  const t=getToken();
+  const bytes=new TextEncoder().encode(JSON.stringify(content,null,2));
+  let binary='';for(const b of bytes)binary+=String.fromCharCode(b);
+  const b64=btoa(binary);
+  const body={message:'update portfolio '+new Date().toISOString(),content:b64};
+  if(sha)body.sha=sha;
+  const r=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${FILE}`,{
+    method:'PUT',headers:{'Authorization':'token '+t,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'},
+    body:JSON.stringify(body)
+  });
+  return r.ok;
+}
+
+async function loadData(){
+  showStatus('加载中...','info');
+  const result=await ghGet();
+  if(result&&result.data){
+    portfolio=result.data;
+    portfolio._sha=result.sha;
+    showStatus('加载成功，共 '+portfolio.funds.length+' 只基金','ok');
+  }else{
+    // 首次使用，创建默认数据
+    portfolio=getDefaultPortfolio();
+    showStatus('未找到数据，已加载默认持仓，请修改后保存','info');
+  }
+  render();
+}
+
+async function saveAll(){
+  collectData();
+  showStatus('保存中...','info');
+  const sha=portfolio._sha||null;
+  const saveData={funds:portfolio.funds,dingTou:portfolio.dingTou,baselineDate:portfolio.baselineDate};
+  const ok=await ghPut(saveData,sha);
+  if(ok){
+    showStatus('保存成功！下次运行工作流将使用新数据','ok');
+    const r=await ghGet();if(r)portfolio._sha=r.sha;
+  }else{
+    showStatus('保存失败，请检查 Token 权限','err');
+  }
+}
+
+function collectData(){
+  const rows=document.querySelectorAll('#fundBody tr');
+  portfolio.funds=[];
+  rows.forEach(r=>{
+    const inputs=r.querySelectorAll('input,select');
+    if(inputs.length>=5){
+      portfolio.funds.push({
+        code:inputs[0].value,name:inputs[1].value,
+        amount:parseFloat(inputs[2].value)||0,profit:parseFloat(inputs[3].value)||0,
+        category:inputs[4].value
+      });
+    }
+  });
+  // DCA
+  const dcaRows=document.querySelectorAll('.dca-entry');
+  portfolio.dingTou={};
+  dcaRows.forEach(r=>{
+    const inputs=r.querySelectorAll('input,select');
+    if(inputs.length>=6){
+      portfolio.dingTou[inputs[0].value]={
+        name:inputs[1].value,
+        baseCost:parseFloat(inputs[2].value)||0,
+        baseAmount:parseFloat(inputs[3].value)||0,
+        daily:parseFloat(inputs[4].value)||0,
+        isQDII:inputs[5].value==='true'
+      };
+    }
+  });
+  portfolio.baselineDate=document.getElementById('baselineDate').value||'2026-05-26';
+}
+
+function render(){
+  renderFunds();renderDCA();renderConcentration();
+  document.getElementById('baselineDate').value=portfolio.baselineDate||'2026-05-26';
+}
+
+const CAT_COLORS={'美股':'#3366ff','港股':'#e74c3c','A股':'#f5a623','资源':'#27ae60','贵金属':'#eab308','其他':'#7c5cfc','混合':'#e84393'};
+function getCatColor(cat){
+  for(const[k,v]of Object.entries(CAT_COLORS)){if(cat.includes(k))return v;}
+  return '#7c5cfc';
+}
+
+function renderFunds(){
+  const body=document.getElementById('fundBody');
+  const cats=['🇺🇸 美股科技','🇭🇰 港股','🇨🇳 A股科技','🏭 资源周期','🥇 贵金属','🌏 其他市场','📦 混合其他'];
+  let html='';
+  portfolio.funds.forEach((f,i)=>{
+    const opts=cats.map(c=>`<option value="${c}"${c===f.category?' selected':''}>${c}</option>`).join('');
+    html+=`<tr>
+      <td><input value="${f.code}" style="width:80px"></td>
+      <td><input value="${f.name}"></td>
+      <td><input type="number" value="${f.amount}" step="0.01"></td>
+      <td><input type="number" value="${f.profit}" step="0.01"></td>
+      <td><select>${opts}</select></td>
+      <td><button class="btn btn-danger" onclick="delFund(${i})">删除</button></td>
+    </tr>`;
+  });
+  body.innerHTML=html;
+  document.getElementById('fundCount').textContent=portfolio.funds.length+' 只基金';
+}
+
+function renderDCA(){
+  const body=document.getElementById('dcaBody');
+  let html='';
+  for(const[code,d]of Object.entries(portfolio.dingTou||{})){
+    html+=`<div class="dca-row dca-entry">
+      <input value="${code}" style="width:80px">
+      <input value="${d.name}">
+      <input type="number" value="${d.baseCost}" step="0.01">
+      <input type="number" value="${d.baseAmount}" step="0.01">
+      <input type="number" value="${d.daily}" step="1">
+      <select><option value="true"${d.isQDII?' selected':''}>QDII</option><option value="false"${!d.isQDII?' selected':''}>A股</option></select>
+      <button class="btn btn-danger" onclick="this.parentElement.remove()">删除</button>
+    </div>`;
+  }
+  body.innerHTML=html;
+}
+
+function renderConcentration(){
+  const catTotals={};let total=0;
+  portfolio.funds.forEach(f=>{
+    if(!catTotals[f.category])catTotals[f.category]=0;
+    catTotals[f.category]+=f.amount||0;
+    total+=f.amount||0;
+  });
+  let barHTML='',legendHTML='';
+  for(const[cat,amt]of Object.entries(catTotals)){
+    const pct=total>0?Math.round(amt/total*100):0;
+    const color=getCatColor(cat);
+    barHTML+=`<div style="flex:${pct};background:${color}">${pct}%</div>`;
+    const warn=pct>=30?' <span class="conc-warn">⚠️ 集中度过高</span>':'';
+    legendHTML+=`<div class="conc-item"><span class="conc-dot" style="background:${color}"></span>${cat} ${pct}% (¥${amt.toFixed(0)})${warn}</div>`;
+  }
+  document.getElementById('concBar').innerHTML=barHTML;
+  document.getElementById('concLegend').innerHTML=legendHTML;
+}
+
+function addFund(){
+  collectData();
+  const code=document.getElementById('addCode').value;
+  const name=document.getElementById('addName').value;
+  if(!code||!name){showStatus('请填写代码和名称','err');return;}
+  portfolio.funds.push({
+    code,name,
+    amount:parseFloat(document.getElementById('addAmount').value)||0,
+    profit:parseFloat(document.getElementById('addProfit').value)||0,
+    category:document.getElementById('addCat').value
+  });
+  document.getElementById('addCode').value='';
+  document.getElementById('addName').value='';
+  document.getElementById('addAmount').value='';
+  document.getElementById('addProfit').value='';
+  render();
+}
+
+function addDCA(){
+  collectData();
+  const code=document.getElementById('dcaCode').value;
+  const name=document.getElementById('dcaName').value;
+  if(!code||!name){showStatus('请填写代码和名称','err');return;}
+  portfolio.dingTou[code]={
+    name,baseCost:parseFloat(document.getElementById('dcaCost').value)||0,
+    baseAmount:parseFloat(document.getElementById('dcaAmount').value)||0,
+    daily:parseFloat(document.getElementById('dcaDaily').value)||0,
+    isQDII:document.getElementById('dcaType').value==='true'
+  };
+  document.getElementById('dcaCode').value='';
+  document.getElementById('dcaName').value='';
+  render();
+}
+
+function delFund(i){
+  collectData();
+  portfolio.funds.splice(i,1);
+  render();
+}
+
+function getDefaultPortfolio(){
+  return {
+    funds:[
+      {code:"016453",name:"南方纳斯达克100C",amount:4009.42,profit:463.83,category:"🇺🇸 美股科技"},
+      {code:"019172",name:"摩根纳斯达克100A",amount:1081.63,profit:101.63,category:"🇺🇸 美股科技"},
+      {code:"016452",name:"南方纳斯达克100A",amount:250.51,profit:0.51,category:"🇺🇸 美股科技"},
+      {code:"019305",name:"摩根标普500C",amount:2006.84,profit:66.84,category:"🇺🇸 美股科技"},
+      {code:"017641",name:"摩根标普500A",amount:250.39,profit:0.39,category:"🇺🇸 美股科技"},
+      {code:"016702",name:"银华海外数字经济C",amount:712.64,profit:98.36,category:"🇺🇸 美股科技"},
+      {code:"013309",name:"易方达恒生科技C",amount:97.70,profit:-2.30,category:"🇭🇰 港股"},
+      {code:"021934",name:"富国中证通信设备ETFC",amount:300,profit:0,category:"🇨🇳 A股科技"},
+      {code:"017470",name:"嘉实科创芯片C",amount:300,profit:0,category:"🇨🇳 A股科技"},
+      {code:"017251",name:"中欧软件开发指数C",amount:459.62,profit:-40.38,category:"🇨🇳 A股科技"},
+      {code:"018490",name:"万家工业有色金属C",amount:1402.58,profit:-97.42,category:"🏭 资源周期"},
+      {code:"019875",name:"广发稀有金属ETFC",amount:1784.76,profit:-15.24,category:"🏭 资源周期"},
+      {code:"020274",name:"富国细分化工C(腾讯)",amount:1119.49,profit:-80.51,category:"🏭 资源周期"},
+      {code:"020274",name:"富国细分化工ETFC",amount:934.43,profit:-65.57,category:"🏭 资源周期"},
+      {code:"002611",name:"博时黄金ETFC",amount:1820.38,profit:-190.61,category:"🥇 贵金属"},
+      {code:"021075",name:"华夏黄金产业ETFC(腾讯)",amount:2358.77,profit:-606.19,category:"🥇 贵金属"},
+      {code:"021075",name:"华夏黄金产业ETFC(小倍)",amount:896.07,profit:-103.93,category:"🥇 贵金属"},
+      {code:"161226",name:"国投瑞银白银LOFA",amount:549.62,profit:-150.38,category:"🥇 贵金属"},
+      {code:"006105",name:"宏利印度机会股票A",amount:101.84,profit:-8.16,category:"🌏 其他市场"},
+      {code:"015689",name:"富国价值增长混合C",amount:3210.33,profit:210.33,category:"📦 混合其他"},
+      {code:"017992",name:"华泰柏瑞致远混合C",amount:2388.25,profit:-411.75,category:"📦 混合其他"},
+      {code:"006229",name:"中欧医疗创新C",amount:899.54,profit:-0.46,category:"📦 混合其他"}
+    ],
+    dingTou:{
+      "019172":{name:"摩根纳指100A",baseCost:980,baseAmount:1081.63,baseProfit:101.63,daily:20,isQDII:true},
+      "016452":{name:"南方纳指100A",baseCost:250,baseAmount:250.51,baseProfit:0.51,daily:50,isQDII:true},
+      "017641":{name:"摩根标普500A",baseCost:250,baseAmount:250.39,baseProfit:0.39,daily:50,isQDII:true},
+      "015689":{name:"富国价值增长混合C",baseCost:3000,baseAmount:3210.33,baseProfit:210.33,daily:100,isQDII:false}
+    },
+    baselineDate:"2026-05-26"
+  };
+}
+
+// 自动加载 Token
+window.onload=function(){
+  const saved=localStorage.getItem('gh_token');
+  if(saved){document.getElementById('tokenInput').value=saved;loadData();}
+};
+</script>
+</body>
+</html>
