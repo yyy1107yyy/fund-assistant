@@ -1,0 +1,189 @@
+{
+  "funds": [
+    {
+      "code": "016453",
+      "name": "南方纳斯达克100C",
+      "amount": 4009.42,
+      "profit": 463.83,
+      "category": "🇺🇸 美股科技"
+    },
+    {
+      "code": "019172",
+      "name": "摩根纳斯达克100A",
+      "amount": 1081.63,
+      "profit": 101.63,
+      "category": "🇺🇸 美股科技"
+    },
+    {
+      "code": "016452",
+      "name": "南方纳斯达克100A",
+      "amount": 250.51,
+      "profit": 0.51,
+      "category": "🇺🇸 美股科技"
+    },
+    {
+      "code": "019305",
+      "name": "摩根标普500C",
+      "amount": 2006.84,
+      "profit": 66.84,
+      "category": "🇺🇸 美股科技"
+    },
+    {
+      "code": "017641",
+      "name": "摩根标普500A",
+      "amount": 250.39,
+      "profit": 0.39,
+      "category": "🇺🇸 美股科技"
+    },
+    {
+      "code": "016702",
+      "name": "银华海外数字经济C",
+      "amount": 712.64,
+      "profit": 98.36,
+      "category": "🇺🇸 美股科技"
+    },
+    {
+      "code": "013309",
+      "name": "易方达恒生科技C",
+      "amount": 97.7,
+      "profit": -2.3,
+      "category": "🇭🇰 港股"
+    },
+    {
+      "code": "021934",
+      "name": "富国中证通信设备ETFC",
+      "amount": 300,
+      "profit": 0,
+      "category": "🇨🇳 A股科技"
+    },
+    {
+      "code": "017470",
+      "name": "嘉实科创芯片C",
+      "amount": 300,
+      "profit": 0,
+      "category": "🇨🇳 A股科技"
+    },
+    {
+      "code": "017251",
+      "name": "中欧软件开发指数C",
+      "amount": 459.62,
+      "profit": -40.38,
+      "category": "🇨🇳 A股科技"
+    },
+    {
+      "code": "018490",
+      "name": "万家工业有色金属C",
+      "amount": 1402.58,
+      "profit": -97.42,
+      "category": "🏭 资源周期"
+    },
+    {
+      "code": "019875",
+      "name": "广发稀有金属ETFC",
+      "amount": 1784.76,
+      "profit": -15.24,
+      "category": "🏭 资源周期"
+    },
+    {
+      "code": "020274",
+      "name": "富国细分化工C(腾讯)",
+      "amount": 1119.49,
+      "profit": -80.51,
+      "category": "🏭 资源周期"
+    },
+    {
+      "code": "020274",
+      "name": "富国细分化工ETFC",
+      "amount": 934.43,
+      "profit": -65.57,
+      "category": "🏭 资源周期"
+    },
+    {
+      "code": "002611",
+      "name": "博时黄金ETFC",
+      "amount": 1820.38,
+      "profit": -190.61,
+      "category": "🥇 贵金属"
+    },
+    {
+      "code": "021075",
+      "name": "华夏黄金产业ETFC(腾讯)",
+      "amount": 2358.77,
+      "profit": -606.19,
+      "category": "🥇 贵金属"
+    },
+    {
+      "code": "021075",
+      "name": "华夏黄金产业ETFC(小倍)",
+      "amount": 896.07,
+      "profit": -103.93,
+      "category": "🥇 贵金属"
+    },
+    {
+      "code": "161226",
+      "name": "国投瑞银白银LOFA",
+      "amount": 549.62,
+      "profit": -150.38,
+      "category": "🥇 贵金属"
+    },
+    {
+      "code": "006105",
+      "name": "宏利印度机会股票A",
+      "amount": 101.84,
+      "profit": -8.16,
+      "category": "🌏 其他市场"
+    },
+    {
+      "code": "015689",
+      "name": "富国价值增长混合C",
+      "amount": 3210.33,
+      "profit": 210.33,
+      "category": "📦 混合其他"
+    },
+    {
+      "code": "017992",
+      "name": "华泰柏瑞致远混合C",
+      "amount": 2388.25,
+      "profit": -411.75,
+      "category": "📦 混合其他"
+    },
+    {
+      "code": "006229",
+      "name": "中欧医疗创新C",
+      "amount": 899.54,
+      "profit": -0.46,
+      "category": "📦 混合其他"
+    }
+  ],
+  "dingTou": {
+    "019172": {
+      "name": "摩根纳指100A",
+      "baseCost": 980,
+      "baseAmount": 1081.63,
+      "daily": 20,
+      "isQDII": true
+    },
+    "016452": {
+      "name": "南方纳指100A",
+      "baseCost": 250,
+      "baseAmount": 250.51,
+      "daily": 50,
+      "isQDII": true
+    },
+    "017641": {
+      "name": "摩根标普500A",
+      "baseCost": 250,
+      "baseAmount": 250.39,
+      "daily": 50,
+      "isQDII": true
+    },
+    "015689": {
+      "name": "富国价值增长混合C",
+      "baseCost": 3000,
+      "baseAmount": 3210.33,
+      "daily": 100,
+      "isQDII": false
+    }
+  },
+  "baselineDate": "2026-05-26"
+}
