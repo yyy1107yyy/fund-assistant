@@ -176,13 +176,6 @@
       "baseAmount": 250.39,
       "daily": 50,
       "isQDII": true
-    },
-    "015689": {
-      "name": "富国价值增长混合C",
-      "baseCost": 3000,
-      "baseAmount": 3210.33,
-      "daily": 100,
-      "isQDII": false
     }
   },
   "baselineDate": "2026-05-26"
