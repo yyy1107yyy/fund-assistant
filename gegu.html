@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>个股扫描 · 2026-06-08 19:03</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}:root{--bg:#f0f2f5;--white:#fff;--card:#fff;--border:#e8ecf1;--border-l:#f0f2f5;--text:#1a1d26;--text2:#5a6178;--text3:#9ca3b8;--red:#e74c3c;--red-bg:#fef2f0;--green:#27ae60;--green-bg:#eefbf3;--blue:#3366ff;--blue-bg:#eef2ff;--gold:#f5a623;--gold-bg:#fff8ee;--purple:#7c5cfc;--purple-bg:#f3f0ff;--shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.06);--radius:14px}
+body{font-family:'Noto Sans SC','DM Sans','PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}.num{font-family:'DM Sans','Noto Sans SC',sans-serif;font-variant-numeric:tabular-nums}.pos{color:var(--red)}.neg{color:var(--green)}
+.topbar{background:var(--white);border-bottom:1px solid var(--border);padding:10px 0;overflow:hidden;position:sticky;top:0;z-index:10}.ticker-wrap{display:flex;gap:24px;align-items:center;animation:scroll 30s linear infinite;white-space:nowrap;padding:0 16px}.ticker-item{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--text2);flex-shrink:0}.ticker-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}.ticker-name{font-weight:600;color:var(--text)}.ticker-pct{font-weight:600;font-size:11px;padding:2px 6px;border-radius:4px}.ticker-pct.up{background:var(--red-bg);color:var(--red)}.ticker-pct.dn{background:var(--green-bg);color:var(--green)}@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}.page-header{padding:24px 0 4px;display:flex;justify-content:space-between;align-items:center}.page-title{font-size:18px;font-weight:700;display:flex;align-items:center;gap:8px}.page-title .icon{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,#3366ff,#7c5cfc);display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700}.page-date{font-size:12px;color:var(--text3)}
+.top-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;box-shadow:var(--shadow)}.card-title{font-size:13px;font-weight:600;color:var(--text2);margin-bottom:12px}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat-box{background:var(--bg);border-radius:10px;padding:14px 16px}.stat-label{font-size:10px;color:var(--text3);letter-spacing:0.5px;margin-bottom:4px}.stat-val{font-size:20px;font-weight:700}.stat-val.sm{font-size:15px}
+.holdings-card{margin-top:16px}
+.tbl{width:100%;border-collapse:collapse}.tbl th{text-align:left;font-size:10px;color:var(--text3);font-weight:500;padding:6px 10px;border-bottom:1px solid var(--border-l)}.tbl th:nth-child(n+3){text-align:right}.tbl td{padding:10px;font-size:12.5px;border-bottom:1px solid var(--border-l)}.tbl td:nth-child(n+3){text-align:right}.tbl tr:last-child td{border-bottom:none}.tbl tr:hover{background:var(--bg)}.fund-name-cell{display:flex;align-items:center;gap:8px;font-weight:500}.fund-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}.rank-no{color:var(--text3);font-size:11px;min-width:18px}.code-sub{color:var(--text3);font-size:10px;margin-left:4px}
+.pct-badge{font-weight:700;font-size:13px;padding:4px 10px;border-radius:6px;display:inline-block;min-width:64px;text-align:center}.pct-badge.pos{background:var(--red-bg);color:var(--red)}.pct-badge.neg{background:var(--green-bg);color:var(--green)}.pct-badge.flat{background:var(--bg);color:var(--text3)}
+.score-badge{font-weight:700;font-size:13px;padding:3px 9px;border-radius:6px;display:inline-block;min-width:38px;text-align:center}.score-hi{background:var(--red-bg);color:var(--red)}.score-mid{background:var(--gold-bg);color:var(--gold)}.score-lo{background:var(--green-bg);color:var(--green)}
+.sig-card{margin-top:16px}.sig-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}.sig-item{padding:14px 16px;background:var(--bg);border-radius:10px}.sig-item-name{font-size:13px;font-weight:600;margin-bottom:8px}.sig-item-name .code-sub{font-weight:400}.sig-rows{display:flex;flex-direction:column;gap:4px}.sig-row{display:flex;align-items:flex-start;gap:6px;font-size:11px;color:var(--text2);line-height:1.5}.pill{font-size:10px;font-weight:600;padding:3px 8px;border-radius:4px;flex-shrink:0}.pill.warn{background:var(--gold-bg);color:var(--gold)}.pill.mid{background:var(--blue-bg);color:var(--blue)}.pill.dn{background:var(--green-bg);color:var(--green)}
+.footer{text-align:center;padding:24px 0 40px;font-size:11px;color:var(--text3)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}.card{animation:fadeIn .4s ease both}
+@media(max-width:640px){.top-row{grid-template-columns:1fr}.sig-list{grid-template-columns:1fr}.stat-grid{grid-template-columns:1fr}.tbl th:nth-child(4),.tbl td:nth-child(4){display:none}}
+</style></head><body>
+<div class="topbar"><div class="ticker-wrap"><div class="ticker-item"><span class="ticker-dot" style="background:#27ae60"></span><span class="ticker-name">烽火通信</span><span class="ticker-pct dn">-3.51%</span></div><div class="ticker-item"><span class="ticker-dot" style="background:#27ae60"></span><span class="ticker-name">中兴通讯</span><span class="ticker-pct dn">-5.93%</span></div><div class="ticker-item"><span class="ticker-dot" style="background:#27ae60"></span><span class="ticker-name">海康威视</span><span class="ticker-pct dn">-3.13%</span></div><div class="ticker-item"><span class="ticker-dot" style="background:#27ae60"></span><span class="ticker-name">中际旭创</span><span class="ticker-pct dn">-2.12%</span></div><div class="ticker-item"><span class="ticker-dot" style="background:#27ae60"></span><span class="ticker-name">新易盛</span><span class="ticker-pct dn">-3.07%</span></div><div class="ticker-item"><span class="ticker-dot" style="background:#27ae60"></span><span class="ticker-name">烽火通信</span><span class="ticker-pct dn">-3.51%</span></div><div class="ticker-item"><span class="ticker-dot" style="background:#27ae60"></span><span class="ticker-name">中兴通讯</span><span class="ticker-pct dn">-5.93%</span></div><div class="ticker-item"><span class="ticker-dot" style="background:#27ae60"></span><span class="ticker-name">海康威视</span><span class="ticker-pct dn">-3.13%</span></div><div class="ticker-item"><span class="ticker-dot" style="background:#27ae60"></span><span class="ticker-name">中际旭创</span><span class="ticker-pct dn">-2.12%</span></div><div class="ticker-item"><span class="ticker-dot" style="background:#27ae60"></span><span class="ticker-name">新易盛</span><span class="ticker-pct dn">-3.07%</span></div></div></div>
+<div class="wrap">
+<div class="page-header"><div class="page-title"><span class="icon">📈</span>个股扫描日报</div><span class="page-date">2026-06-08 19:03</span></div>
+<div class="top-row">
+  <div class="card"><div class="card-title">扫描概览</div><div class="stat-grid">
+      <div class="stat-box"><div class="stat-label">最高综合分</div><div class="stat-val sm">烽火通信</div><div style="font-size:13px;margin-top:2px;font-weight:700" class="pos num">52/100</div></div>
+      <div class="stat-box"><div class="stat-label">资金今日</div><div class="stat-val sm"><span class="pos">0</span> 流入 / <span class="neg">0</span> 流出</div><div style="font-size:11px;margin-top:2px;color:var(--text3)">共 5 只</div></div>
+      <div class="stat-box"><div class="stat-label">预警信号</div><div class="stat-val" style="color:var(--gold)">2</div><div style="font-size:11px;margin-top:2px;color:var(--text3)">只有交叉信号</div></div>
+      <div class="stat-box"><div class="stat-label">平均综合分</div><div class="stat-val num">47</div><div style="font-size:11px;margin-top:2px;color:var(--text3)">满分100</div></div>
+    </div></div>
+  <div class="card"><div class="card-title">今日重点</div><div class="stat-grid">
+      <div class="stat-box"><div class="stat-label">资金最猛流入</div><div class="stat-val sm pos">—</div><div style="font-size:12px;margin-top:2px" class="pos num">主力 —</div></div>
+      <div class="stat-box"><div class="stat-label">扫描数量</div><div class="stat-val num">5</div><div style="font-size:11px;margin-top:2px;color:var(--text3)">只</div></div>
+    </div></div>
+</div>
+<div class="card holdings-card"><div class="card-title">扫描总表 · 按综合分高→低</div><table class="tbl">
+      <tr><th>股票</th><th>综合分</th><th>量比</th><th>今日主力</th><th>涨跌幅</th></tr>
+      <tr>
+          <td><div class="fund-name-cell"><span class="rank-no">1</span><span class="fund-dot" style="background:#f5a623"></span>烽火通信<span class="code-sub">600498</span> <span class="pill warn">⚠×1</span></div></td>
+          <td><span class="score-badge score-mid">52</span></td>
+          <td class="num">1.40</td>
+          <td><span class="num" style="color:var(--text3)">—</span></td>
+          <td><span class="pct-badge neg num">-3.51%</span></td>
+        </tr><tr>
+          <td><div class="fund-name-cell"><span class="rank-no">2</span><span class="fund-dot" style="background:#f5a623"></span>中兴通讯<span class="code-sub">000063</span> </div></td>
+          <td><span class="score-badge score-mid">50</span></td>
+          <td class="num">1.18</td>
+          <td><span class="num" style="color:var(--text3)">—</span></td>
+          <td><span class="pct-badge neg num">-5.93%</span></td>
+        </tr><tr>
+          <td><div class="fund-name-cell"><span class="rank-no">3</span><span class="fund-dot" style="background:#f5a623"></span>海康威视<span class="code-sub">002415</span> </div></td>
+          <td><span class="score-badge score-mid">44</span></td>
+          <td class="num">1.06</td>
+          <td><span class="num" style="color:var(--text3)">—</span></td>
+          <td><span class="pct-badge neg num">-3.13%</span></td>
+        </tr><tr>
+          <td><div class="fund-name-cell"><span class="rank-no">4</span><span class="fund-dot" style="background:#f5a623"></span>中际旭创<span class="code-sub">300308</span> <span class="pill warn">⚠×1</span></div></td>
+          <td><span class="score-badge score-mid">44</span></td>
+          <td class="num">1.05</td>
+          <td><span class="num" style="color:var(--text3)">—</span></td>
+          <td><span class="pct-badge neg num">-2.12%</span></td>
+        </tr><tr>
+          <td><div class="fund-name-cell"><span class="rank-no">5</span><span class="fund-dot" style="background:#f5a623"></span>新易盛<span class="code-sub">300502</span> </div></td>
+          <td><span class="score-badge score-mid">44</span></td>
+          <td class="num">0.89</td>
+          <td><span class="num" style="color:var(--text3)">—</span></td>
+          <td><span class="pct-badge neg num">-3.07%</span></td>
+        </tr>
+    </table></div>
+<div class="card sig-card"><div class="card-title" style="margin-bottom:12px">⚠ 交叉预警信号 · 2只</div><div class="sig-list"><div class="sig-item"><div class="sig-item-name">烽火通信<span class="code-sub">600498</span> · 综合52</div><div class="sig-rows"><div class="sig-row"><span class="pill warn">⚠</span>冲高回落: 放量上涨却留长上影 → 上方抛压重(资金维度缺失, 待确认)</div></div></div><div class="sig-item"><div class="sig-item-name">中际旭创<span class="code-sub">300308</span> · 综合44</div><div class="sig-rows"><div class="sig-row"><span class="pill warn">⚠</span>冲高回落: 放量上涨却留长上影 → 上方抛压重(资金维度缺失, 待确认)</div></div></div></div></div>
+</div>
+<div class="footer">数据来源：新浪(K线) + 东方财富(资金) · 阈值与权重为经验规则，非回测模型<br>本工具只整理数据，不构成投资建议</div>
+</body></html>
