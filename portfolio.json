@@ -64,13 +64,6 @@
       "category": "🇨🇳 A股科技"
     },
     {
-      "code": "020485",
-      "name": "中欧软件开发指数C",
-      "amount": 459.62,
-      "profit": -40.38,
-      "category": "🇨🇳 A股科技"
-    },
-    {
       "code": "018490",
       "name": "万家工业有色金属C",
       "amount": 1402.58,
@@ -82,20 +75,6 @@
       "name": "广发稀有金属ETFC",
       "amount": 1784.76,
       "profit": -15.24,
-      "category": "🏭 资源周期"
-    },
-    {
-      "code": "020274",
-      "name": "富国细分化工C(腾讯)",
-      "amount": 1119.49,
-      "profit": -80.51,
-      "category": "🏭 资源周期"
-    },
-    {
-      "code": "020274",
-      "name": "富国细分化工ETFC",
-      "amount": 934.43,
-      "profit": -65.57,
       "category": "🏭 资源周期"
     },
     {
@@ -125,13 +104,6 @@
       "amount": 549.62,
       "profit": -150.38,
       "category": "🥇 贵金属"
-    },
-    {
-      "code": "006105",
-      "name": "宏利印度机会股票A",
-      "amount": 101.84,
-      "profit": -8.16,
-      "category": "🌏 其他市场"
     },
     {
       "code": "015689",
