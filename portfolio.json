@@ -108,8 +108,8 @@
     {
       "code": "015689",
       "name": "富国价值增长混合C",
-      "amount": 2984.64,
-      "profit": 88.48,
+      "amount": 419.35,
+      "profit": 65.13,
       "category": "📦 混合其他"
     },
     {
@@ -122,8 +122,8 @@
     {
       "code": "006229",
       "name": "中欧医疗创新C",
-      "amount": 899.54,
-      "profit": -0.46,
+      "amount": 1271.17,
+      "profit": -108.83,
       "category": "📦 混合其他"
     }
   ],
@@ -155,6 +155,13 @@
       "baseAmount": 40,
       "daily": 20,
       "isQDII": true
+    },
+    "006229": {
+      "name": "中欧医疗创新C",
+      "baseCost": 1380,
+      "baseAmount": 1380,
+      "daily": 10,
+      "isQDII": false
     }
   },
   "baselineDate": "2026-05-26"
