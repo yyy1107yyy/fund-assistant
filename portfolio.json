@@ -52,29 +52,29 @@
     {
       "code": "021934",
       "name": "富国中证通信设备ETFC",
-      "amount": 298.31,
-      "profit": -1.69,
+      "amount": 1043.12,
+      "profit": 43.12,
       "category": "🇨🇳 A股科技"
     },
     {
       "code": "017470",
       "name": "嘉实科创芯片C",
-      "amount": 373.35,
-      "profit": -26.65,
+      "amount": 1047.78,
+      "profit": 47.78,
       "category": "🇨🇳 A股科技"
     },
     {
       "code": "018490",
       "name": "万家工业有色金属C",
-      "amount": 1402.58,
-      "profit": -97.42,
+      "amount": 576.82,
+      "profit": 10.36,
       "category": "🏭 资源周期"
     },
     {
       "code": "019875",
       "name": "广发稀有金属ETFC",
-      "amount": 1784.76,
-      "profit": -15.24,
+      "amount": 665.17,
+      "profit": 65.18,
       "category": "🏭 资源周期"
     },
     {
@@ -87,15 +87,8 @@
     {
       "code": "021075",
       "name": "华夏黄金产业ETFC(腾讯)",
-      "amount": 2358.77,
-      "profit": -606.19,
-      "category": "🥇 贵金属"
-    },
-    {
-      "code": "021075",
-      "name": "华夏黄金产业ETFC(小倍)",
-      "amount": 896.07,
-      "profit": -103.93,
+      "amount": 849.62,
+      "profit": -150.38,
       "category": "🥇 贵金属"
     },
     {
@@ -115,8 +108,8 @@
     {
       "code": "017992",
       "name": "华泰柏瑞致远混合C",
-      "amount": 2388.25,
-      "profit": -411.75,
+      "amount": 1191.28,
+      "profit": -208.71,
       "category": "📦 混合其他"
     },
     {
@@ -125,6 +118,13 @@
       "amount": 1271.17,
       "profit": -108.83,
       "category": "📦 混合其他"
+    },
+    {
+      "code": "025500",
+      "name": "东方阿尔法科技智选混合C",
+      "amount": 800,
+      "profit": 0,
+      "category": "🇨🇳 A股科技"
     }
   ],
   "dingTou": {
